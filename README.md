@@ -1,10 +1,13 @@
 # Weather-Journal App Project
 
-## Overview
-This project requires you to create an asynchronous web app that uses Web API and user data to dynamically update the UI. 
+This project makes an asynchronous call to the OpenWeather API.
 
-## Instructions
-This will require modifying the `server.js` file and the `website/app.js` file. You can see `index.html` for element references, and once you are finished with the project steps, you can use `style.css` to style your application to customized perfection.
+The user is prompted for information to make the request.
 
-## Extras
-If you are interested in testing your code as you go, you can use `tests.js` as a template for writing and running some basic tests for your code.
+When user presses the GENERATE button. OpenWeather data is requested and the response is received and processed.
+
+Along with information given by the user, a Weather Journal Entry is made and is sent in a 
+POST request to the internal server which will be persisted.
+
+A GET request is then called to retreive the journal entries and the latest is displayed by the UI.
+
