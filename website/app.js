@@ -39,7 +39,7 @@ async function performAction() {
     console.error("Invalid Request for weather data");
     return;
   }
-
+  console.log(weatherData);
   const weatherEntry = {
     date: newDate,
     temperature: weatherData.main.temp,
@@ -61,6 +61,8 @@ const getWeatherData = async (baseURL, zip, key) => {
   } catch (error) {
     // appropriately handle the error
     console.log(error);
+  } finally {
+    return;
   }
 }
 
