@@ -46,7 +46,7 @@ async function performAction() {
     user_response: feelings,
   };
   const post_result = await postWeatherEntry("/add", weatherEntry);
-
+  console.log(post_result);
   if (post_result.status === "success") {
     await getLatestEntry("/all");
   }
@@ -61,8 +61,6 @@ const getWeatherData = async (baseURL, zip, key) => {
   } catch (error) {
     // appropriately handle the error
     console.log(error);
-  } finally {
-    return;
   }
 }
 
@@ -89,6 +87,7 @@ const getLatestEntry = async (url = '/all') => {
   try {
     const response = await fetch(url);
     const data = await response.json();
+    console.log(data);
     const lastEntry = data[data.length - 1];
 
     outputDiv('date', lastEntry.date);
